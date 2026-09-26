@@ -5,6 +5,10 @@ IN: Checks if a value is present within a list of specified values.
 CASE: Used for conditional expressions and assigning values based on conditions 
 BETWEEN Operator 
 
+SELECT *
+FROM orders
+WHERE order_date BETWEEN '2024-03-15' AND '2024-03-20';
+
 ±This retrieves all orders placed between March 15th, 2024 (inclusive) and March 20th, 2024 (inclusive).
 
 ±BETWEEN: 
@@ -180,6 +184,9 @@ DELETE FROM Orders
 
 IN Operator 
 This operator checks if a value exists within a specified list of values 
+select*from customers
+where country in ('usa','canada','uk');
+
 
 ±This retrieves customer records where the country is either 'USA', 'Canada', or 'UK'.
 
