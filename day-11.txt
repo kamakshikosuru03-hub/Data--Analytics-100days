@@ -1,0 +1,1135 @@
+Summary of Numeric Functions:
+ABS(): Absolute value of a number.
+CEIL(): Round up.
+FLOOR(): Round down.
+ROUND(): Round to a specific number of digits.
+MOD(): Modulo operation.
+POW()/POWER(): Exponentiation.
+SQRT(): Square root.
+LN(): Natural logarithm.
+LOG(): Logarithm to a specific base.
+EXP(): Exponential function.
+RADIANS(): Convert degrees to radians.
+DEGREES(): Convert radians to degrees.
+SIGN(): Returns the sign of a number.
+RAND(): Generate a random number.
+GREATEST(): Find the maximum value.
+LEAST(): Find the minimum value.
+PI(): Return the value of Pi.
+TRUNCATE()	Truncate decimal places (no rounding)
+ROUND(x, d, mode)	Round with control over mode
+LOG2()	Log base 2
+LOG10()	Log base 10
+BIT_COUNT()	Count set bits in binary
+CONV()	Convert between number bases
+HEX()	Convert to hexadecimal
+OCT()	Convert to octal
+BIN()	Convert to binary
+
+
+
+1. ABS() - Absolute Value
+Description: Returns the absolute value of a number (removes the sign).
+SELECT ABS(-100) AS absolute_value;
+
+Output:
++----------------+
+| absolute_value |
++----------------+
+| 100            |
++----------------+
+
+
+2. CEIL() or CEILING() - Round Up
+Description: Rounds a number up to the nearest integer.
+SELECT CEIL(12.34) AS rounded_up;
+
+Output:
+
++------------+
+| rounded_up |
++------------+
+| 13         |
++------------+
+
+
+3. FLOOR() - Round Down
+Description: Rounds a number down to the nearest integer.
+SELECT FLOOR(12.34) AS rounded_down;
+
+Output:
++--------------+
+| rounded_down |
++--------------+
+| 12           |
++--------------+
+
+
+4. ROUND() - Round to a Specific Number of Digits
+Description: Rounds a number to a specified number of decimal places.
+SELECT ROUND(12.3456, 2) AS rounded_value;
+
+Output:
++--------------+
+| rounded_value|
++--------------+
+| 12.35        |
++--------------+
+
+
+5. MOD() - Modulo (Remainder of Division)
+Description: Returns the remainder of the division of two numbers.
+SELECT MOD(17, 5) AS remainder;
+
+Output:
+
++-----------+
+| remainder |
++-----------+
+| 2         |
++-----------+
+
+
+6. POW() or POWER() - Exponentiation
+Description: Returns the value of a number raised to the power of another number.
+SELECT POW(2, 3) AS power_value;
+
+Output:
++-------------+
+| power_value |
++-------------+
+| 8           |
++-------------+
+
+
+7. SQRT() - Square Root
+Description: Returns the square root of a number.
+SELECT SQRT(16) AS square_root;
+
+Output:
++-------------+
+| square_root |
++-------------+
+| 4           |
++-------------+
+
+
+8. LN() - Natural Logarithm
+Description: Returns the natural logarithm (base e) of a number.
+SELECT LN(10) AS natural_log;
+
+Output:
++-------------+
+| natural_log |
++-------------+
+| 2.302585    |
++-------------+
+
+
+9. LOG() - Logarithm
+Description: Returns the logarithm of a number to a specified base.
+SELECT LOG(10, 100) AS log_value;
+
+Output:
++-----------+
+| log_value |
++-----------+
+| 2         |
++-----------+
+
+
+10. EXP() - Exponential
+Description: Returns the value of e (Euler's number) raised to the power of the specified number.
+SELECT EXP(1) AS exponential_value;
+
+Output:
++-------------------+
+| exponential_value |
++-------------------+
+| 2.718282          |
++-------------------+
+
+
+11. RADIANS() - Convert Degrees to Radians
+Description: Converts degrees to radians.
+
+SELECT RADIANS(180) AS radians_value;
+
+Output:
++---------------+
+| radians_value |
++---------------+
+| 3.141593      |
++---------------+
+
+
+12. DEGREES() - Convert Radians to Degrees
+Description: Converts radians to degrees.
+
+SELECT DEGREES(PI()) AS degrees_value;
+
+Output:
++---------------+
+| degrees_value |
++---------------+
+| 180           |
++---------------+
+
+
+13. SIGN() - Sign of a Number
+Description: Returns the sign of a number:
+1 for positive numbers
+0 for zero
+-1 for negative numbers
+
+SELECT SIGN(-25) AS sign_value;
+
+Output:
++------------+
+| sign_value |
++------------+
+| -1         |
++------------+
+
+
+14. RAND() - Generate a Random Number
+Description: Returns a random floating-point number between 0 and 1.
+SELECT RAND() AS random_value;
+
+Output:
++--------------+
+| random_value |
++--------------+
+| 0.538953     |
++--------------+
+
+To generate a random number within a specific range:
+SELECT FLOOR(RAND() * (100 - 1 + 1) + 1) AS random_in_range;
+
+Output:
++------------------+
+| random_in_range  |
++------------------+
+| 47               |
++------------------+
+
+
+15. GREATEST() - Find the Maximum Value
+Description: Returns the largest value from a list of expressions.
+
+
+SELECT GREATEST(5, 10, 15, 20) AS GREATEST_value;
+
+Output:
++----------------+
+| greatest_value |
++----------------+
+| 20             |
++----------------+
+
+
+16. LEAST() - Find the Minimum Value
+Description: Returns the smallest value from a list of expressions.
+
+SELECT LEAST(5, 10, 15, 20) AS least_value;
+
+Output:
++--------------+
+| least_value |
++--------------+
+| 5            |
++--------------+
+
+
+17. PI() - Returns the Value of Pi
+Description: Returns the constant value of π (pi).
+SELECT PI() AS pi_value;
+
+Output:
++-----------+
+| pi_value  |
++-----------+
+| 3.141593  |
++-----------+
+18. TRUNCATE() – Truncate Decimal Places
+Description: Truncates a number to a specified number of decimal places without rounding.
+
+SELECT TRUNCATE(12.3456, 2) AS truncated_value;
+
+Output:
++----------------+
+| truncated_value|
++----------------+
+| 12.34          |
++----------------+
+
+
+19. ROUND(X, D [, mode]) – Round with Optional Mode
+Description: Rounds a number X to D decimal places. If mode is set to 1, it truncates away from zero instead of rounding.
+
+Output:
++----------------+
+| rounded_custom |
++----------------+
+| -1.5           |
++----------------+
+
+
+20. LOG2() – Logarithm Base 2
+Description: Returns the base-2 logarithm of a number.
+SELECT LOG2(8) AS log2_value;
+
+Output:
++-------------+
+| log2_value  |
++-------------+
+| 3           |
++-------------+
+
+
+21. LOG10() – Logarithm Base 10
+Description: Returns the base-10 logarithm of a number.
+SELECT LOG10(1000) AS log10_value;
+
+Output:
++--------------+
+| log10_value  |
++--------------+
+| 3            |
++--------------+
+
+
+22. BIT_COUNT() – Count of Set Bits
+Description: Returns the number of bits that are set (i.e., 1s) in the binary representation of a number.
+
+SELECT BIT_COUNT(7) AS set_bits_count;
+
+Output:
++-----------------+
+| set_bits_count  |
++-----------------+
+| 3               |
++-----------------+
+
+Because 7 in binary is 111 → 3 bits are set.
+
+23. CONV(N, from_base, to_base) – Convert Number Between Bases
+Description: Converts a number N from one base to another (between 2 and 36).
+SELECT CONV('A', 16, 10) AS base10_value;
+
+Output:
++--------------+
+| base10_value |
++--------------+
+| 10           |
++--------------+
+
+
+24. HEX() – Convert to Hexadecimal
+Description: Returns the hexadecimal value of a decimal number.
+SELECT HEX(255) AS hex_value;
+
+Output:
++-----------+
+| hex_value |
++-----------+
+| FF        |
++-----------+
+
+
+25. OCT() – Convert to Octal
+Description: Returns the octal (base 8) representation of a number.
+SELECT OCT(64) AS octal_value;
+
+Output:
++-------------+
+| octal_value |
++-------------+
+| 100         |
++-------------+
+
+
+26. BIN() – Convert to Binary
+Description: Converts a decimal number to its binary representation.
+SELECT BIN(10) AS binary_value;
+
+Output:
+
++--------------+
+| binary_value |
++--------------+
+| 1010         |
++--------------+
+
+
+CREATE TABLE employee(
+	emp_id INT PRIMARY KEY,
+	emp_name VARCHAR(50),
+	age INT,
+	department VARCHAR(30),
+	salary DECIMAL(10,2),
+	bonus DECIMAL(10,2),
+	experience DECIMAL(5,2),
+	performance_score DECIMAL(6,2)
+); 
+
+INSERT INTO employee VALUES
+(101,'Rahul',25,'IT',35000.75,2500.50,2.5,85.45),
+(102,'Anjali',30,'HR',42000.80,3200.75,5.8,91.65),
+(103,'Ramesh',27,'Sales',38000.60,2100.90,3.2,74.55),
+(104,'Priya',35,'Finance',55000.90,5000.25,8.7,95.80),
+(105,'Arjun',29,'IT',46000.50,3500.60,4.6,82.45),
+(106,'Sneha',24,'HR',32000.20,1800.40,1.8,69.85),
+(107,'Kiran',32,'Sales',50000.90,4200.30,6.5,88.90),
+(108,'Deepika',28,'Finance',41000.75,3000.50,4.2,79.65),
+(109,'Mahesh',40,'IT',68000.40,6500.75,12.5,97.20),
+(110,'Divya',26,'HR',36000.85,2400.25,2.9,76.40); 
+
+
+
+
+SQL STRING FUNCTIONS
+MySQL String Functions with Description
+Function
+Description
+CONCAT()
+Concatenates (joins) two or more strings into a single string without any separator unless specified.
+CONCAT_WS()
+Concatenates multiple strings using a specified separator (WS = With Separator).
+UPPER()
+Converts all characters in a string to uppercase. (UCASE() is an alias.)
+LOWER()
+Converts all characters in a string to lowercase. (LCASE() is an alias.)
+SUBSTRING()
+Extracts a specified number of characters from a string starting at a given position. (SUBSTR() is an alias.)
+LEFT()
+Returns the specified number of characters from the beginning (left side) of a string.
+RIGHT()
+Returns the specified number of characters from the end (right side) of a string.
+LENGTH()
+Returns the length of a string in bytes. For multi-byte characters, the byte count may be greater than the character count.
+CHAR_LENGTH()
+Returns the number of characters in a string, regardless of how many bytes each character occupies.
+REPLACE()
+Replaces all occurrences of a specified substring within a string with another substring.
+TRIM()
+Removes leading and trailing spaces (or specified characters) from a string.
+POSITION()
+Returns the position of the first occurrence of a substring within a string. Returns 0 if the substring is not found.
+INSTR()
+Returns the position of the first occurrence of a substring within a string. Similar to POSITION(), but uses a different syntax.
+REVERSE()
+Reverses the order of characters in a string.
+LPAD()
+Pads the left side of a string with a specified character until the string reaches the desired length.
+RPAD()
+Pads the right side of a string with a specified character until the string reaches the desired length.
+ASCII()
+Returns the ASCII value of the first character in a string.
+
+
+Table Setup
+A single employees table is reused for every question in this workbook — from basic single-function calls through advanced multi-function reports.
+CREATE TABLE employees (
+    emp_id INT PRIMARY KEY,
+    first_name VARCHAR(30),
+    last_name VARCHAR(30),
+    email VARCHAR(60),
+    phone_number VARCHAR(20),
+    department VARCHAR(30),
+    city VARCHAR(30),
+    salary DECIMAL(10,2)
+);
+Sample Data
+INSERT INTO employees VALUES
+(101,'Rahul','Kumar','rahul.kumar@gmail.com','987-654-3210','IT','Hyderabad',45000),
+(102,'Anita','Sharma','anita.sharma@yahoo.com','912-345-6789','HR','Bangalore',38000),
+(103,'Suresh','Verma','suresh.verma@gmail.com','998-123-4567','Sales','Chennai',52000),
+(104,'Priya','Singh','priya.singh@outlook.com','900-456-7890','Finance','Pune',47000),
+(105,'Rahul','Joshi','rahul.joshi@gmail.com','955-888-1111','Testing','Delhi',41000),
+(106,'Kiran','Reddy','kiran.reddy@gmail.com','901-222-3333','IT','Hyderabad',56000),
+(107,'Deepika','Naidu','deepika.naidu@yahoo.com','944-111-2222','HR','Vizag',39000),
+(108,'Mahesh','Patel','mahesh.patel@gmail.com','933-444-5555','Sales','Mumbai',62000),
+(109,'Divya','Gupta','divya.gupta@gmail.com','955-777-8888','Finance','Delhi',49000),
+(110,'Arjun','Rao','arjun.rao@gmail.com','988-999-7777','Developer','Hyderabad',68000);
+
+ Basic Level
+20 Questions — one string function at a time
+Q1. Display full name by concatenating first_name and last_name.
+	select concat(first_name,'',last_name)as full_name from employees;
++--------------+
+| full_name    |
++--------------+
+| RahulKumar   |
+| AnitaSharma  |
+| SureshVerma  |
+| PriyaSingh   |
+| RahulJoshi   |
+| KiranReddy   |
+| DeepikaNaidu |
+| MaheshPatel  |
+| DivyaGupta   |
+| ArjunRao     |
+| NULL         |
++--------------+
+
+
+Q2.Convert first_name to uppercase.
+SELECT first_name, UPPER(first_name) AS upper_name
+FROM employees;
++------------+------------+
+| first_name | upper_name |
++------------+------------+
+| Rahul      | RAHUL      |
+| Anita      | ANITA      |
+| Suresh     | SURESH     |
+| Priya      | PRIYA      |
+| Rahul      | RAHUL      |
+| Kiran      | KIRAN      |
+| Deepika    | DEEPIKA    |
+| Mahesh     | MAHESH     |
+| Divya      | DIVYA      |
+| Arjun      | ARJUN      |
+|  kavya k   |  KAVYA K   |
++------------+------------+
+
+Q3. Convert last_name to lowercase.
+SELECT last_name, LOWER(last_name) AS lower_name
+FROM employees;
++-----------+------------+
+| last_name | lower_name |
++-----------+------------+
+| Kumar     | kumar      |
+| Sharma    | sharma     |
+| Verma     | verma      |
+| Singh     | singh      |
+| Joshi     | joshi      |
+| Reddy     | reddy      |
+| Naidu     | naidu      |
+| Patel     | patel      |
+| Gupta     | gupta      |
+| Rao       | rao        |
+| NULL      | NULL       |
++-----------+------------+
+
+Q4. Extract the first 10 characters of email.
+SELECT email, SUBSTRING(email, 1, 10) AS email_prefix
+FROM employees;
++-------------------------+--------------+
+| email                   | email_prefix |
++-------------------------+--------------+
+| rahul.kumar@gmail.com   | rahul.kuma   |
+| anita.sharma@yahoo.com  | anita.shar   |
+| suresh.verma@gmail.com  | suresh.ver   |
+| priya.singh@outlook.com | priya.sing   |
+| rahul.joshi@gmail.com   | rahul.josh   |
+| kiran.reddy@gmail.com   | kiran.redd   |
+| deepika.naidu@yahoo.com | deepika.na   |
+| mahesh.patel@gmail.com  | mahesh.pat   |
+| divya.gupta@gmail.com   | divya.gupt   |
+| arjun.rao@gmail.com     | arjun.rao@   |
+| NULL                    | NULL         |
++-------------------------+--------------+
+
+Q5. Find the length of first_name.
+SELECT first_name, LENGTH(first_name) AS name_length
+FROM employees;
++------------+-------------+
+| first_name | name_length |
++------------+-------------+
+| Rahul      |           5 |
+| Anita      |           5 |
+| Suresh     |           6 |
+| Priya      |           5 |
+| Rahul      |           5 |
+| Kiran      |           5 |
+| Deepika    |           7 |
+| Mahesh     |           6 |
+| Divya      |           5 |
+| Arjun      |           5 |
+|  kavya k   |           8 |
++------------+-------------+
+
+Q6. Remove dashes from phone_number.
+SELECT phone_number, REPLACE(phone_number, '-', '') AS clean_phone
+FROM employees;
++--------------+-------------+
+| phone_number | clean_phone |
++--------------+-------------+
+| 987-654-3210 | 9876543210  |
+| 912-345-6789 | 9123456789  |
+| 998-123-4567 | 9981234567  |
+| 900-456-7890 | 9004567890  |
+| 955-888-1111 | 9558881111  |
+| 901-222-3333 | 9012223333  |
+| 944-111-2222 | 9441112222  |
+| 933-444-5555 | 9334445555  |
+| 955-777-8888 | 9557778888  |
+| 988-999-7777 | 9889997777  |
+| NULL         | NULL        |
++--------------+-------------+
+
+Q7. Remove leading and trailing spaces from first_name.
+SELECT TRIM(first_name) AS trimmed_name
+FROM employees;
++--------------+
+| trimmed_name |
++--------------+
+| Rahul        |
+| Anita        |
+| Suresh       |
+| Priya        |
+| Rahul        |
+| Kiran        |
+| Deepika      |
+| Mahesh       |
+| Divya        |
+| Arjun        |
+| kavya k      |
++--------------+
+
+Q8. Concatenate first_name, last_name and email separated by a comma.
+SELECT CONCAT_WS(', ', first_name, last_name, email) AS employee_info
+FROM employees;
++-----------------------------------------+
+| employee_info                           |
++-----------------------------------------+
+| Rahul, Kumar, rahul.kumar@gmail.com     |
+| Anita, Sharma, anita.sharma@yahoo.com   |
+| Suresh, Verma, suresh.verma@gmail.com   |
+| Priya, Singh, priya.singh@outlook.com   |
+| Rahul, Joshi, rahul.joshi@gmail.com     |
+| Kiran, Reddy, kiran.reddy@gmail.com     |
+| Deepika, Naidu, deepika.naidu@yahoo.com |
+| Mahesh, Patel, mahesh.patel@gmail.com   |
+| Divya, Gupta, divya.gupta@gmail.com     |
+| Arjun, Rao, arjun.rao@gmail.com         |
+|  kavya k                                |
++-----------------------------------------+
+
+Q9. Find the position of the letter 'a' in first_name using POSITION().
+SELECT first_name, POSITION('a' IN first_name) AS position_of_a
+FROM employees;
++------------+---------------+
+| first_name | position_of_a |
++------------+---------------+
+| Rahul      |             2 |
+| Anita      |             1 |
+| Suresh     |             0 |
+| Priya      |             5 |
+| Rahul      |             2 |
+| Kiran      |             4 |
+| Deepika    |             7 |
+| Mahesh     |             2 |
+| Divya      |             5 |
+| Arjun      |             1 |
+|  kavya k   |             3 |
++------------+---------------+
+
+Q10. Find the position of the letter 'a' in first_name using INSTR().
+SELECT first_name, INSTR(first_name, 'a') AS position_of_a
+FROM employees;
++------------+---------------+
+| first_name | position_of_a |
++------------+---------------+
+| Rahul      |             2 |
+| Anita      |             1 |
+| Suresh     |             0 |
+| Priya      |             5 |
+| Rahul      |             2 |
+| Kiran      |             4 |
+| Deepika    |             7 |
+| Mahesh     |             2 |
+| Divya      |             5 |
+| Arjun      |             1 |
+|  kavya k   |             3 |
++------------+---------------+
+
+Q11. Display the first 3 characters of first_name.
+SELECT first_name, LEFT(first_name, 3) AS short_name
+FROM employees;
++------------+------------+
+| first_name | short_name |
++------------+------------+
+| Rahul      | Rah        |
+| Anita      | Ani        |
+| Suresh     | Sur        |
+| Priya      | Pri        |
+| Rahul      | Rah        |
+| Kiran      | Kir        |
+| Deepika    | Dee        |
+| Mahesh     | Mah        |
+| Divya      | Div        |
+| Arjun      | Arj        |
+|  kavya k   |  ka        |
++------------+------------+
+
+Q12. Display the last 3 characters of last_name.
+SELECT last_name, RIGHT(last_name, 3) AS end_letters
+FROM employees;
++-----------+-------------+
+| last_name | end_letters |
++-----------+-------------+
+| Kumar     | mar         |
+| Sharma    | rma         |
+| Verma     | rma         |
+| Singh     | ngh         |
+| Joshi     | shi         |
+| Reddy     | ddy         |
+| Naidu     | idu         |
+| Patel     | tel         |
+| Gupta     | pta         |
+| Rao       | Rao         |
+| NULL      | NULL        |
++-----------+-------------+
+
+Q13. Reverse the first_name.
+SELECT first_name, REVERSE(first_name) AS reversed_name
+FROM employees;
++------------+---------------+
+| first_name | reversed_name |
++------------+---------------+
+| Rahul      | luhaR         |
+| Anita      | atinA         |
+| Suresh     | hseruS        |
+| Priya      | ayirP         |
+| Rahul      | luhaR         |
+| Kiran      | nariK         |
+| Deepika    | akipeeD       |
+| Mahesh     | hsehaM        |
+| Divya      | ayviD         |
+| Arjun      | nujrA         |
+|  kavya k   | k ayvak       |
++------------+---------------+
+
+Q14. Pad first_name on the left with '*' to make it 10 characters.
+SELECT first_name, LPAD(first_name, 10, '*') AS padded_name
+FROM employees;
++------------+-------------+
+| first_name | padded_name |
++------------+-------------+
+| Rahul      | *****Rahul  |
+| Anita      | *****Anita  |
+| Suresh     | ****Suresh  |
+| Priya      | *****Priya  |
+| Rahul      | *****Rahul  |
+| Kiran      | *****Kiran  |
+| Deepika    | ***Deepika  |
+| Mahesh     | ****Mahesh  |
+| Divya      | *****Divya  |
+| Arjun      | *****Arjun  |
+|  kavya k   | ** kavya k  |
++------------+-------------+
+
+Q15. Pad first_name on the right with '-' to make it 10 characters.
+SELECT first_name, RPAD(first_name, 10, '-') AS padded_name
+FROM employees;
++------------+-------------+
+| first_name | padded_name |
++------------+-------------+
+| Rahul      | Rahul-----  |
+| Anita      | Anita-----  |
+| Suresh     | Suresh----  |
+| Priya      | Priya-----  |
+| Rahul      | Rahul-----  |
+| Kiran      | Kiran-----  |
+| Deepika    | Deepika---  |
+| Mahesh     | Mahesh----  |
+| Divya      | Divya-----  |
+| Arjun      | Arjun-----  |
+|  kavya k   |  kavya k--  |
++------------+-------------+
+
+Q16. Find the ASCII value of the first character of first_name.
+SELECT first_name, ASCII(first_name) AS ascii_value
+FROM employees;
++------------+-------------+
+| first_name | ascii_value |
++------------+-------------+
+| Rahul      |          82 |
+| Anita      |          65 |
+| Suresh     |          83 |
+| Priya      |          80 |
+| Rahul      |          82 |
+| Kiran      |          75 |
+| Deepika    |          68 |
+| Mahesh     |          77 |
+| Divya      |          68 |
+| Arjun      |          65 |
+|  kavya k   |          32 |
++------------+-------------+
+
+Q17. Find the character length of first_name.
+SELECT first_name, CHAR_LENGTH(first_name) AS char_len
+FROM employees;
++------------+----------+
+| first_name | char_len |
++------------+----------+
+| Rahul      |        5 |
+| Anita      |        5 |
+| Suresh     |        6 |
+| Priya      |        5 |
+| Rahul      |        5 |
+| Kiran      |        5 |
+| Deepika    |        7 |
+| Mahesh     |        6 |
+| Divya      |        5 |
+| Arjun      |        5 |
+|  kavya k   |        8 |
++------------+----------+
+
+Q18. Convert email addresses to lowercase.
+SELECT email, LOWER(email) AS lower_email
+FROM employees;
++-------------------------+-------------------------+
+| email                   | lower_email             |
++-------------------------+-------------------------+
+| rahul.kumar@gmail.com   | rahul.kumar@gmail.com   |
+| anita.sharma@yahoo.com  | anita.sharma@yahoo.com  |
+| suresh.verma@gmail.com  | suresh.verma@gmail.com  |
+| priya.singh@outlook.com | priya.singh@outlook.com |
+| rahul.joshi@gmail.com   | rahul.joshi@gmail.com   |
+| kiran.reddy@gmail.com   | kiran.reddy@gmail.com   |
+| deepika.naidu@yahoo.com | deepika.naidu@yahoo.com |
+| mahesh.patel@gmail.com  | mahesh.patel@gmail.com  |
+| divya.gupta@gmail.com   | divya.gupta@gmail.com   |
+| arjun.rao@gmail.com     | arjun.rao@gmail.com     |
+| NULL                    | NULL                    |
++-------------------------+-------------------------+
+
+Q19. Convert department names to uppercase.
+SELECT department, UPPER(department) AS upper_department
+FROM employees;
++------------+------------------+
+| department | upper_department |
++------------+------------------+
+| IT         | IT               |
+| HR         | HR               |
+| Sales      | SALES            |
+| Finance    | FINANCE          |
+| Testing    | TESTING          |
+| IT         | IT               |
+| HR         | HR               |
+| Sales      | SALES            |
+| Finance    | FINANCE          |
+| Developer  | DEVELOPER        |
+| NULL       | NULL             |
++------------+------------------+
+
+Q20. Remove leading spaces and trailing spaces from city using LTRIM() and RTRIM().
+SELECT city, LTRIM(city) AS left_trimmed, RTRIM(city) AS right_trimmed
+FROM employees;
++-----------+--------------+---------------+
+| city      | left_trimmed | right_trimmed |
++-----------+--------------+---------------+
+| Hyderabad | Hyderabad    | Hyderabad     |
+| Bangalore | Bangalore    | Bangalore     |
+| Chennai   | Chennai      | Chennai       |
+| Pune      | Pune         | Pune          |
+| Delhi     | Delhi        | Delhi         |
+| Hyderabad | Hyderabad    | Hyderabad     |
+| Vizag     | Vizag        | Vizag         |
+| Mumbai    | Mumbai       | Mumbai        |
+| Delhi     | Delhi        | Delhi         |
+| Hyderabad | Hyderabad    | Hyderabad     |
+| NULL      | NULL         | NULL          |
++-----------+--------------+---------------+
+
+ 
+Intermediate Level
+20 Questions — filtering, sorting and combining string functions
+Q1. Find employees whose first_name starts with 'R'.
+SELECT first_name, last_name
+FROM employees
+WHERE first_name LIKE 'R%';
+
+Q2. Find employees whose email contains 'yahoo'.
+SELECT first_name, email
+FROM employees
+WHERE email LIKE '%yahoo%';
+
+Q3. Display full name along with department as a single string.
+SELECT CONCAT(first_name, ' ', last_name, ' - ', department) AS name_department
+FROM employees;
+
+Q4. Find the length of every email address.
+SELECT email, LENGTH(email) AS email_length
+FROM employees;
+
+Q5. Find employees whose first_name has more than 5 characters.
+SELECT first_name
+FROM employees
+WHERE LENGTH(first_name) > 5;
+
+Q6. Replace 'gmail.com' with 'company.com' in email.
+SELECT email, REPLACE(email, 'gmail.com', 'company.com') AS updated_email
+FROM employees;
+
+Q7. Find the position of the '@' symbol in email.
+SELECT email, INSTR(email, '@') AS at_position
+FROM employees;
+
+Q8. Extract the username part of email (before '@') using SUBSTRING_INDEX().
+SELECT email, SUBSTRING_INDEX(email, '@', 1) AS username
+FROM employees;
+
+Q9. Extract the domain part of email (after '@') using SUBSTRING_INDEX().
+SELECT email, SUBSTRING_INDEX(email, '@', -1) AS domain
+FROM employees;
+
+Q10. Find employees whose last_name ends with 'a'.
+SELECT last_name
+FROM employees
+WHERE last_name LIKE '%a';
+
+Q11. Display full name in uppercase for employees in the IT department.
+SELECT UPPER(CONCAT(first_name, ' ', last_name)) AS full_name_upper
+FROM employees
+WHERE department = 'IT';
+
+Q12. Find first names that are duplicated among employees.
+SELECT first_name, COUNT(*) AS occurrences
+FROM employees
+GROUP BY first_name
+HAVING COUNT(*) > 1;
+
+Q13. Format phone numbers by removing all dashes.
+SELECT phone_number, REPLACE(phone_number, '-', '') AS formatted_phone
+FROM employees;
+
+Q14. Find employees whose first_name contains the letter 'i'.
+SELECT first_name
+FROM employees
+WHERE first_name LIKE '%i%';
+
+Q15. Sort employees by the length of their first_name.
+SELECT first_name, LENGTH(first_name) AS name_length
+FROM employees
+ORDER BY name_length;
+
+Q16. Find employees whose city name has more than 6 characters.
+SELECT city
+FROM employees
+WHERE LENGTH(city) > 6;
+
+Q17. Build a formatted string "Name - Department" for every employee.
+SELECT CONCAT(first_name, ' ', last_name, ' - ', department) AS name_dept
+FROM employees;
+
+Q18. Display the initials of each employee (first letter of first and last name).
+SELECT CONCAT(LEFT(first_name, 1), LEFT(last_name, 1)) AS initials
+FROM employees;
+
+Q19. Use REPEAT() to build a star-rating string based on salary (1 star per ₹10,000, capped at 5).
+SELECT first_name, salary,
+   	REPEAT('*', LEAST(FLOOR(salary / 10000), 5)) AS salary_rating
+FROM employees;
+
+Q20. Check whether each employee's department is one of 'IT', 'HR', 'Sales' using FIND_IN_SET().
+SELECT first_name, department,
+   	FIND_IN_SET(department, 'IT,HR,Sales') AS is_core_dept
+FROM employees;
+
+
+ 
+Advanced Level
+20 Questions — masking, reports, and nested string functions
+Q1. Mask email addresses, showing only the first 3 characters before '@'.
+SELECT email,
+   	CONCAT(LEFT(email, 3), '****@', SUBSTRING_INDEX(email, '@', -1)) AS masked_email
+FROM employees;
+
+Q2. Check if any employee's first_name is a palindrome.
+SELECT first_name
+FROM employees
+WHERE LOWER(first_name) = LOWER(REVERSE(first_name));
+
+Q3. Generate a username using the first letter of first_name plus the full last_name, in lowercase.
+SELECT CONCAT(LOWER(LEFT(first_name, 1)), LOWER(last_name)) AS username
+FROM employees;
+
+Q4. Compare first_name and last_name alphabetically using STRCMP().
+SELECT first_name, last_name, STRCMP(first_name, last_name) AS comparison
+FROM employees;
+
+Q5. Extract the top-level domain (e.g. com) from each email using nested SUBSTRING_INDEX().
+SELECT email,SUBSTRING_INDEX(SUBSTRING_INDEX(email, '@', -1), '.', -1) AS tld FROM employees;
++-------------------------+------+
+| email                   | tld  |
++-------------------------+------+
+| rahul.kumar@gmail.com   | com  |
+| anita.sharma@yahoo.com  | com  |
+| suresh.verma@gmail.com  | com  |
+| priya.singh@outlook.com | com  |
+| rahul.joshi@gmail.com   | com  |
+| kiran.reddy@gmail.com   | com  |
+| deepika.naidu@yahoo.com | com  |
+| mahesh.patel@gmail.com  | com  |
+| divya.gupta@gmail.com   | com  |
+| arjun.rao@gmail.com     | com  |
+| NULL                    | NULL |
++-------------------------+------+
+
+Q6. List all employee names grouped by department using GROUP_CONCAT().
+SELECT department,
+   	GROUP_CONCAT(CONCAT(first_name, ' ', last_name) SEPARATOR ', ') AS employees_list
+FROM employees
+GROUP BY department;
+
+Q7. Categorize employees as 'Short Name' or 'Long Name' based on the length of first_name.
+SELECT first_name,
+   	CASE WHEN LENGTH(first_name) <= 5 THEN 'Short Name'
+        	ELSE 'Long Name' END AS name_category
+FROM employees;
+
+Q8. Generate a formatted employee code like 'EMP0101' by padding emp_id with zeros.
+SELECT emp_id, CONCAT('EMP', LPAD(emp_id, 4, '0')) AS employee_code
+FROM employees;
+
+Q9. Extract the area code (first 3 digits) from phone_number.
+SELECT phone_number, SUBSTRING(phone_number, 1, 3) AS area_code
+FROM employees;
+
+Q10. Find the position of the first '.' (dot) in each email using LOCATE().
+SELECT email, LOCATE('.', email) AS dot_position
+FROM employees;
+
+Q11. Mask phone numbers, showing only the last 4 digits.
+SELECT phone_number,
+   	CONCAT('XXX-XXX-', RIGHT(phone_number, 4)) AS masked_phone
+FROM employees;
+
+Q12. Count the number of occurrences of the letter 'a' in each first_name using LENGTH() and REPLACE().
+SELECT first_name,
+   	(LENGTH(first_name) - LENGTH(REPLACE(LOWER(first_name), 'a', ''))) AS a_count
+FROM employees;
+
+Q13. Find employees whose full name (concatenated) exceeds 15 characters.
+SELECT first_name, last_name,
+   	LENGTH(CONCAT(first_name, ' ', last_name)) AS full_name_length
+FROM employees
+HAVING full_name_length > 15;
+
+Q14. Generate an employee short code combining initials and emp_id (e.g. RK101).
+SELECT CONCAT(LEFT(first_name, 1), LEFT(last_name, 1), emp_id) AS short_code
+FROM employees;
+
+Q15. Sort employees by last_name in descending order.
+SELECT first_name, last_name FROM employees
+ORDER BY last_name DESC;
++------------+-----------+
+| first_name | last_name |
++------------+-----------+
+| Suresh     | Verma     |
+| Priya      | Singh     |
+| Anita      | Sharma    |
+| Kiran      | Reddy     |
+| Arjun      | Rao       |
+| Mahesh     | Patel     |
+| Deepika    | Naidu     |
+| Rahul      | Kumar     |
+| Rahul      | Joshi     |
+| Divya      | Gupta     |
+|  kavya k   | NULL      |
++------------+-----------+
+
+Q16. Create a 3-letter short code for each department using LEFT() and UPPER().
+SELECT department, UPPER(LEFT(department, 3)) AS dept_code
+FROM employees;
++------------+-----------+
+| department | dept_code |
++------------+-----------+
+| IT         | IT        |
+| HR         | HR        |
+| Sales      | SAL       |
+| Finance    | FIN       |
+| Testing    | TES       |
+| IT         | IT        |
+| HR         | HR        |
+| Sales      | SAL       |
+| Finance    | FIN       |
+| Developer  | DEV       |
+| NULL       | NULL      |
++------------+-----------+
+
+Q17. Display employee salary formatted with a thousands separator using FORMAT().
+SELECT first_name, salary, FORMAT(salary, 0) AS formatted_salary
+FROM employees;
++------------+----------+------------------+
+| first_name | salary   | formatted_salary |
++------------+----------+------------------+
+| Rahul      | 45000.00 | 45,000           |
+| Anita      | 38000.00 | 38,000           |
+| Suresh     | 52000.00 | 52,000           |
+| Priya      | 47000.00 | 47,000           |
+| Rahul      | 41000.00 | 41,000           |
+| Kiran      | 56000.00 | 56,000           |
+| Deepika    | 39000.00 | 39,000           |
+| Mahesh     | 62000.00 | 62,000           |
+| Divya      | 49000.00 | 49,000           |
+| Arjun      | 68000.00 | 68,000           |
+|  kavya k   |     NULL | NULL             |
++------------+----------+------------------+
+
+Q18. Build a complete employee directory report combining name, masked email, and department code.
+SELECT CONCAT(first_name, ' ', last_name) AS full_name,
+   	CONCAT(LEFT(email, 3), '****@', SUBSTRING_INDEX(email, '@', -1)) AS masked_email,
+   	UPPER(LEFT(department, 3)) AS dept_code
+FROM employees;
++---------------+---------------------+-----------+
+| full_name     | masked_email        | dept_code |
++---------------+---------------------+-----------+
+| Rahul Kumar   | rah****@gmail.com   | IT        |
+| Anita Sharma  | ani****@yahoo.com   | HR        |
+| Suresh Verma  | sur****@gmail.com   | SAL       |
+| Priya Singh   | pri****@outlook.com | FIN       |
+| Rahul Joshi   | rah****@gmail.com   | TES       |
+| Kiran Reddy   | kir****@gmail.com   | IT        |
+| Deepika Naidu | dee****@yahoo.com   | HR        |
+| Mahesh Patel  | mah****@gmail.com   | SAL       |
+| Divya Gupta   | div****@gmail.com   | FIN       |
+| Arjun Rao     | arj****@gmail.com   | DEV       |
+| NULL          | NULL                | NULL      |
++---------------+---------------------+-----------+
+
+Q19. Find employees whose email domain is not 'gmail.com'.
+SELECT first_name, email
+FROM employees
+WHERE SUBSTRING_INDEX(email, '@', -1) <> 'gmail.com';
++------------+-------------------------+
+| first_name | email                   |
++------------+-------------------------+
+| Anita      | anita.sharma@yahoo.com  |
+| Priya      | priya.singh@outlook.com |
+| Deepika    | deepika.naidu@yahoo.com |
++------------+-------------------------+
+
+Q20. Generate a full formatted employee record: "EMP<emp_id> | <FULL NAME> | <Department> | Salary: <formatted salary>".
+SELECT CONCAT(
+     	'EMP', emp_id, ' | ',
+     	UPPER(CONCAT(first_name, ' ', last_name)), ' | ',
+     	department, ' | Salary: ', FORMAT(salary, 0)
+   	) AS employee_record
+FROM employees;
++-------------------------------------------------+
+| employee_record                                 |
++-------------------------------------------------+
+| EMP101 | RAHUL KUMAR | IT | Salary: 45,000      |
+| EMP102 | ANITA SHARMA | HR | Salary: 38,000     |
+| EMP103 | SURESH VERMA | Sales | Salary: 52,000  |
+| EMP104 | PRIYA SINGH | Finance | Salary: 47,000 |
+| EMP105 | RAHUL JOSHI | Testing | Salary: 41,000 |
+| EMP106 | KIRAN REDDY | IT | Salary: 56,000      |
+| EMP107 | DEEPIKA NAIDU | HR | Salary: 39,000    |
+| EMP108 | MAHESH PATEL | Sales | Salary: 62,000  |
+| EMP109 | DIVYA GUPTA | Finance | Salary: 49,000 |
+| EMP110 | ARJUN RAO | Developer | Salary: 68,000 |
+| NULL                                            |
++-------------------------------------------------+
+
+ 
+
+
+
+
+
